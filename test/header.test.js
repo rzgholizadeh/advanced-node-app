@@ -26,7 +26,6 @@ test("clicking login starts oauth flow", async () => {
 });
 
 test("when signed in, shows logout button", async () => {
-    //const id = "5e9262e0e5985c32b4e85d6b";
     const user = await userFactory();
     const { session, sig } = sessionFactory(user);
     await page.setCookie({ name: "session", value: session });
