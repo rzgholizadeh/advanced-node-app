@@ -31,8 +31,8 @@ class CustomPage {
         await this.page.waitFor('a[href="/auth/logout"]');
     }
 
-    async getContentsOf(selector) {
-        return await this.page.$eval(selector, (el) => el.innerHTML);
+    getContentsOf(selector) {
+        return this.page.$eval(selector, (el) => el.innerHTML);
     }
 
     get(path) {
@@ -61,6 +61,14 @@ class CustomPage {
             },
             path,
             body
+        );
+    }
+
+    executeRequests(actions) {
+        return Promise.all(
+            actions.map(({ method, path, data }) => {
+                return this[method](path, data);
+            })
         );
     }
 }
