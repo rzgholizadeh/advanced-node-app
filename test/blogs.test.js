@@ -5,7 +5,7 @@ let page;
 
 beforeEach(async () => {
     page = await Page.build();
-    await page.goto("localhost:3000");
+    await page.goto("http://localhost:3000");
 });
 
 afterEach(async () => {
@@ -75,18 +75,4 @@ describe("When user is not logged in", async () => {
             expect(result).toEqual({ error: "You must log in!" });
         }
     });
-
-    /*
-    test("user cannot create blog posts", async () => {
-        const result = await page.post("/api/blogs", {
-            title: "My Title",
-            content: "My Content"
-        });
-        expect(result).toEqual({ error: "You must log in!" });
-    });
-    test("user cannot get blog posts", async () => {
-        const result = await page.get("/api/blogs");
-        expect(result).toEqual({ error: "You must log in!" });
-    });
-    */
 });
