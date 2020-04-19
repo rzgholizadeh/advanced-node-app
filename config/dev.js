@@ -5,5 +5,7 @@ module.exports = {
     mongoURI:
         "mongodb://advancedNode:28f6QsP6nQyFQ91d@cluster0-shard-00-00-kncq1.mongodb.net:27017,cluster0-shard-00-01-kncq1.mongodb.net:27017,cluster0-shard-00-02-kncq1.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority",
     cookieKey: "123123123",
-    redisUrl: "redis://127.0.0.1:6379"
+    redisUrl: "redis://127.0.0.1:6379",
+    accessKeyId: "AKIA3HFP65543YYJKFHE",
+    secretAccessKey: "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"
 };
