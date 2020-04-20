@@ -5,7 +5,9 @@ const requireLogin = require("../middlewares/requireLogin");
 
 const s3 = new AWS.S3({
     accessKeyId: keys.accessKeyId,
-    secretAccessKey: keys.secretAccessKey
+    secretAccessKey: keys.secretAccessKey,
+    signatureVersion: keys.signatureVersion,
+    region: keys.region
 });
 
 module.exports = (app) => {
@@ -15,7 +17,7 @@ module.exports = (app) => {
             "putObject",
             {
                 Bucket: "rzghz-advanced-node-app",
-                ContentType: "jpeg",
+                ContentType: "image/jpeg",
                 Key: key
             },
             (err, url) => res.send({ key, url })
